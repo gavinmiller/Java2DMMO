@@ -69,4 +69,5 @@ private final int MAX_GAMEOBJECTS = 64;
 7. Finally run the Main.java file inside the client project, and login with one of the accounts created with the populateDB.sql file (Make sure there is a character assosciated with that account)
 
 ## Other credit
-[Marcus Dubreuil](https://www.youtube.com/watch?v=lDzKX3djE-M) - for the 7 hour video on creating a basic Java Canvas Game engine which I mostly followed as the outline for my clientside Game engine
+[Marcus Dubreuil](https://www.youtube.com/watch?v=lDzKX3djE-M) - for the 7 hour video on creating a basic Java Canvas Game engine which I mostly followed as the outline for my clientside Game engine  
+[Art credit] (http://opengameart.org/content/16x16-town-remix)
