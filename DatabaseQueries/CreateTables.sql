@@ -33,7 +33,7 @@ CREATE TABLE Accounts (
 );
 
 
--- Character info (NOT CURRENTLY USED)
+-- Character info
 CREATE TABLE Characters (
 	character_id INT IDENTITY(0,1),
 	player_id INT,
