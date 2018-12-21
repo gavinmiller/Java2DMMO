@@ -20,7 +20,7 @@ import com.gavinmiller.client.MainClient;
 public class Game extends JFrame implements Runnable {
 
     public static int alpha = 0xFFFF00DC; // Transparent colour not to display
-    private final int MAX_GAMEOBJECTS = 32;
+    private final int MAX_GAMEOBJECTS = 64;
 
     private Canvas canvas = new Canvas();
     private KeyboardListener keyListener = new KeyboardListener(this);

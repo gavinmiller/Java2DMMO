@@ -31,6 +31,7 @@ public class MainDB implements Runnable{
     private Connection dbConnection;
     
     private final String getConnectionURL(){
+        // Return the first line instead if you are not using MSSQL with a windows authenticated user
         //return "jdbc:sqlserver://" + serverAddress + ":" + serverPort + ";databaseName=" + dbName + ";user=" + dbUsername + ";password=" + dbPassword;
         return "jdbc:sqlserver://" + serverAddress + ":" + serverPort + ";databaseName=" + dbName + ";integratedSecurity=true";
     }
@@ -73,7 +74,7 @@ public class MainDB implements Runnable{
     }
     
     private boolean isPlayerConnected(String username){
-        String isConnectedQuery = "SELECT is_connected FROM Characters, Accounts WHERE (Accounts.player_username = \'" + username + "\' AND Accounts.player_id = Characters.player_id)";
+        String isConnectedQuery = "SELECT is_connected FROM " + charactersTableName + " C, " + accountsTableName + " A WHERE (A.player_username = \'" + username + "\' AND A.player_id = C.player_id)";
         
         try {
             PreparedStatement pstmt = dbConnection.prepareStatement(isConnectedQuery);
@@ -95,7 +96,7 @@ public class MainDB implements Runnable{
     public Player getPlayer(String username){
         Player player = null;
         
-        String playerDetailsQuery = "SELECT C.* FROM Characters C, Accounts A WHERE (A.player_username = \'" + username + "\' AND A.player_id = C.player_id)";
+        String playerDetailsQuery = "SELECT C.* FROM " + charactersTableName + " C, " + accountsTableName + " A WHERE (A.player_username = \'" + username + "\' AND A.player_id = C.player_id)";
         
         try {
             PreparedStatement pstmt = dbConnection.prepareStatement(playerDetailsQuery);
@@ -121,7 +122,7 @@ public class MainDB implements Runnable{
     }
     
     public void changeConnectedPlayer(boolean isConnected, int playerID){
-        String updateConnectedPlayerQuery = "UPDATE Characters SET is_connected = " + (isConnected ? 1 : 0) + " WHERE player_id = " + playerID;
+        String updateConnectedPlayerQuery = "UPDATE " + charactersTableName + " SET is_connected = " + (isConnected ? 1 : 0) + " WHERE player_id = " + playerID;
         
         try {            
             dbConnection.createStatement().execute(updateConnectedPlayerQuery);
