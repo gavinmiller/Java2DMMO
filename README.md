@@ -70,4 +70,4 @@ private final int MAX_GAMEOBJECTS = 64;
 
 ## Other credit
 [Marcus Dubreuil](https://www.youtube.com/watch?v=lDzKX3djE-M) - for the 7 hour video on creating a basic Java Canvas Game engine which I mostly followed as the outline for my clientside Game engine  
-[Art credit] (http://opengameart.org/content/16x16-town-remix)
+[Art credit](http://opengameart.org/content/16x16-town-remix)
