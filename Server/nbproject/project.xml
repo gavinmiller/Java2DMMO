@@ -11,9 +11,6 @@
                 <root id="test.src.dir"/>
             </test-roots>
         </data>
-<<<<<<< HEAD
-        <references xmlns="http://www.netbeans.org/ns/ant-project-references/1"/>
-=======
         <references xmlns="http://www.netbeans.org/ns/ant-project-references/1">
             <reference>
                 <foreign-project>Shared</foreign-project>
@@ -24,6 +21,5 @@
                 <id>jar</id>
             </reference>
         </references>
->>>>>>> 4dd0889cb418724eaa7f1c7e0e789923b2d05e6c
     </configuration>
 </project>
